@@ -6,6 +6,7 @@ from openai import OpenAI
 # Load variables from the .env file
 load_dotenv()
 
+openai_model = os.environ.get("MODEL")
 
 # client = OpenAI()
 # defaults to getting the key using os.environ.get("OPENAI_API_KEY")

@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  summarize-api:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../training:/training
+    env_file:
+      - .env
