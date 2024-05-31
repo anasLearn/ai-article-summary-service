@@ -30,6 +30,11 @@ def predict(
     """
     response_json = summarize_article(article.text)
 
+    for lang in response_json:
+        sentences = response_json[lang]
+        for i in range(len(sentences)):
+            sentences[i] = sentences[i].encode('utf-8')
+
     return response_json
 
 
