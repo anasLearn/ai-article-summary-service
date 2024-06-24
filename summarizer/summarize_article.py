@@ -1,10 +1,9 @@
 import json
-from pprint import pprint
 
 from dotenv import load_dotenv
 
-from openai_config import client, openai_model
-from prompt import system_message, generate_prompt
+from .openai_config import client, openai_model
+from .prompt import system_message, generate_prompt
 
 # Load variables from the .env file
 load_dotenv()

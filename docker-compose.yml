@@ -1,11 +1,16 @@
 version: '3.9'
 
 services:
-  summarize-api:
-    build: .
+  ai-article-summary:
+    build:
+      context: .
+      args:
+        HOST: ${HOST}
+        PORT: ${PORT}
+    image: ai-article-summary-image
+    container_name: ai_summary_container
     ports:
-      - "8080:8080"
-    volumes:
-      - ../training:/training
+      - "${PORT}:${PORT}"
     env_file:
       - .env
+    restart: unless-stopped

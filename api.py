@@ -1,10 +1,16 @@
+import os
+
+from dotenv import load_dotenv
 from fastapi import FastAPI
 import uvicorn
 from pydantic import BaseModel
 
-from summarize_article import summarize_article
+from summarizer.summarize_article import summarize_article
 
+load_dotenv()
 app = FastAPI()
+host = os.environ.get("HOST", "127.0.0.1")
+port = int(os.environ.get("PORT", "5010"))
 
 
 @app.get("/ping")
@@ -39,4 +45,4 @@ def predict(
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host='localhost', port=8080)
+    uvicorn.run("api:app", host=host, port=port, reload=True)
