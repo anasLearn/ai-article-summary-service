@@ -15,8 +15,8 @@ def summarize_article(article: str):
         response_format={"type": "json_object"},
         messages=[
             {"role": "system", "content": system_message},
-            {"role": "user", "content": generate_prompt(article)}
-        ]
+            {"role": "user", "content": generate_prompt(article)},
+        ],
     )
 
-    return json.loads(completion.choices[0].message.content.replace("\n", ' '))
+    return json.loads(completion.choices[0].message.content.replace("\n", " "))
