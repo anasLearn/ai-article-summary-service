@@ -9,8 +9,8 @@ from summarizer.summarize_article import summarize_article
 
 load_dotenv()
 app = FastAPI()
-host = os.environ.get("HOST", "127.0.0.1")
-port = int(os.environ.get("PORT", "5010"))
+HOST = os.environ.get("HOST", "localhost")
+PORT = int(os.environ.get("PORT", "5010"))
 
 
 @app.get("/ping")
@@ -43,4 +43,4 @@ def predict(article: Article):
 
 
 if __name__ == "__main__":
-    uvicorn.run("api:app", host=host, port=port, reload=True)
+    uvicorn.run("api:app", host=HOST, port=PORT, reload=True)
