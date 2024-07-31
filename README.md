@@ -2,5 +2,5 @@
 Summarize Articles using OpenAI API.
 
 ## Prequisities
-Python 3.9 or higher
+Python 3.9
 
