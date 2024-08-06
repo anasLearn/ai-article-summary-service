@@ -15,7 +15,15 @@ PORT = int(os.environ.get("PORT", "5010"))
 
 @app.get("/ping")
 async def ping():
-    return "Hello, I am alive"
+    """
+    GET /ping
+
+    Health check endpoint to verify that the AI Summary service is alive.
+
+    Returns:
+        str: A confirmation message indicating the service is alive.
+    """
+    return "Hello, AI Summary service is alive"
 
 
 class Article(BaseModel):
