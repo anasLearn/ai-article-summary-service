@@ -20,7 +20,7 @@ ENV HOST=${HOST}
 ENV PORT=${PORT}
 
 # Expose the port on which the FastAPI server will run (change as needed)
-EXPOSE 8080
+EXPOSE ${PORT}
 
 # Command to run the FastAPI server
 CMD ["sh", "-c", "uvicorn api:app --host $HOST --port $PORT"]
